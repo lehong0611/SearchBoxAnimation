@@ -1,0 +1,151 @@
+body {
+	margin:  0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 500px;
+	background-image: radial-gradient(circle, #4e6c98, #385387, #253b76, #162362, #0a0a4e);
+}
+.main {
+	/* width: 500px;
+	height: 50px; */
+	width: 50px;
+	height: 50px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* animation: main-active 1s both; */
+}
+.main .search {
+	width: 100%;
+	height: 100%;
+	border:  1px solid black;
+	position: absolute;
+	border-radius: 40px;
+	outline: none;
+	background: rgba(0, 0, 0, 0.1);
+	border: none;
+	color: #fff;
+	text-align: center;
+}
+.main .search::placeholder {
+	color: #fff;
+	text-align: center;
+	font-size: 20px;
+}
+.main .box-search {
+	width: 50px;
+	height: 50px;
+	background: #fff;
+	position: absolute;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 20px;
+	color: #4e6c98;
+	z-index: 2;
+	right: 0;
+	/* animation: box-search-active 0.5s both; */
+}
+.main .exit, .main .exit:before {
+	width: 5px;
+	height: 30px;
+	background: #fff;
+	border-radius: 10px;
+	position: absolute;
+	transition: .1s all;
+	/* animation: exit-active 0.5s 0.8s both; */
+}
+.main .eixt {
+	transform: rotate(45deg);
+	right: 15px;
+	opacity: 0;
+}
+.main .exit:before {
+	content: '';
+	transform: rotate(90deg);
+	transition: .1s all;
+}
+
+.main .exit:hover, .main .exit:hover:before {
+	color: #ff0033;
+}
+
+@keyframes main-active {
+	0% {
+		width: 50px;
+	}
+	80% {
+		transform: scale(1.2);
+		width: 500px;
+	} 
+	100% {
+		transform: scale(1);
+		width: 500px;
+	}
+}
+@keyframes box-search-active {
+	0% {
+
+	}
+	100% {
+		border-radius: 50%;
+		transform: rotate(2turn) scale(0.8);
+	}
+}
+@keyframes exit-active {
+	0% {
+		
+	}
+	80%{
+		right: -80px;
+		opacity: 1;
+	}
+	100% {
+		right: -60px;
+		opacity: 1;
+		transform: rotate(500deg);
+	}
+}
+@keyframes main-close {
+	0% {
+		transform: scale(1);
+		width: 500px;
+		
+	}
+	20% {
+		transform: scale(1.2);
+		width: 500px;
+	} 
+	100% {
+		width: 50px;
+	}
+}
+@keyframes box-search-close {
+	0% {
+		border-radius: 50%;
+		transform: rotate(2turn) scale(0.8);
+	}
+	100% {
+		width: 50px;
+		height: 50px;
+		border-radius: 5px;
+	}
+}
+@keyframes exit-close {
+	0% {
+		right: -60px;
+		opacity: 1;
+		transform: rotate(500deg);
+	}
+	20%{
+		right: -80px;
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
